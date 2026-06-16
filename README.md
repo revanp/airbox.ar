@@ -108,6 +108,30 @@ This is intentionally lightweight and camera-agnostic. It is good enough for vis
 
 Experimental. Built for fun, learning, and visual prototyping.
 
+## Bonus: Kage Bunshin no Jutsu (Shadow Clone Mode)
+
+A for-fun mode inspired by Naruto's "Jutsu Seribu Bayangan". Cross both hands into
+a **`+`** (one hand horizontal, one vertical, overlapping) and hold for a moment to
+summon translucent shadow clones of yourself that appear in a smoke puff behind you,
+crowded around like a real bunshin squad.
+
+- Selfie segmentation lifts your silhouette off the background so clones get layered
+  *behind* the live you.
+- Cross hands again to re-summon (clears and respawns the squad).
+- Press `d` to dispel clones. `q` / `Esc` to quit.
+
+```bash
+uv run shadow-clone
+uv run shadow-clone --clones 6 --hold-frames 4
+```
+
+Flags:
+
+- `--clones`: number of clones (1-6). Default `5`.
+- `--hold-frames`: how many frames the `+` must be held before summoning. Default `6`.
+- `--camera`: webcam device index.
+- `--max-hands`: hands tracked by MediaPipe.
+
 Ideas that would be interesting to add next:
 
 - Screenshot / recording mode
